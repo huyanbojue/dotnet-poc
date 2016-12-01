@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{A507CED4-B3CB-4EDF-AE97-77870AA5AF3E}|">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="naya/StudentViewer.aspx" Line="171" Column="21" />
+      <File FileName="naya/StudentViewer.aspx.cs" Line="48" Column="5" />
+      <File FileName="naya/MarksViewer.aspx.cs" Line="8" Column="3" />
+      <File FileName="naya/MarksViewer.aspx" Line="135" Column="4" />
+      <File FileName="naya/Models/StudentMarkRepository.cs" Line="36" Column="143" />
+      <File FileName="naya/Models/Student.cs" Line="20" Column="3" />
+      <File FileName="naya/MarksViewer.aspx.designer.cs" Line="1" Column="1" />
+      <File FileName="naya/Models/Mark.cs" Line="8" Column="2" />
+      <File FileName="naya/Print.master" Line="30" Column="15" />
+      <File FileName="naya/StudentViewer.aspx.designer.cs" Line="1" Column="1" />
+      <File FileName="naya/Models/nayaDbContext.cs" Line="1" Column="1" />
+      <File FileName="naya/Global.asax" Line="1" Column="1" />
+      <File FileName="naya/Web.config" Line="16" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.naya PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

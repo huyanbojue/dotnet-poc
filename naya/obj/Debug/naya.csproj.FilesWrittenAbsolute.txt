@@ -1,0 +1,10 @@
+/Users/subigyanepal/Projects/naya/naya/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/subigyanepal/Projects/naya/naya/bin/naya.dll.mdb
+/Users/subigyanepal/Projects/naya/naya/bin/naya.dll
+/Users/subigyanepal/Projects/naya/naya/obj/Debug/naya.dll
+/Users/subigyanepal/Projects/naya/naya/obj/Debug/naya.dll.mdb
+/Users/subigyanepal/Projects/naya/naya/bin/WebActivator.dll
+/Users/subigyanepal/Projects/naya/naya/bin/EntityFramework.dll
+/Users/subigyanepal/Projects/naya/naya/bin/EntityFramework.SqlServer.dll
+/Users/subigyanepal/Projects/naya/naya/bin/MySql.Data.dll
+/Users/subigyanepal/Projects/naya/naya/bin/MySql.Data.Entity.EF6.dll
