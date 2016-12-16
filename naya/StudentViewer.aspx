@@ -24,10 +24,10 @@
             </ul>
 </asp:Content>
 <asp:Content id="body" ContentPlaceHolderID="ContentSection" runat="server">
-	<form runat="server">
+	<form id="pageForm" runat="server">
 
 		
-<asp:GridView ID="StudentsGridView" RowStyle-Wrap="true" AutoGenerateColumns="false"  AllowPaging="true" DataSourceID="ObjectDataSource1" 
+<asp:GridView ID="StudentsGridView" RowStyle-Wrap="true" AutoGenerateColumns="false"  AllowPaging="true" DataSourceID="ObjectDataSourceStudents" 
  CssClass="gvv" runat="server" DataKeyNames="ID" HeaderStyle-BackColor="CornflowerBlue" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="White">
  <EditRowStyle CssClass="GridViewEditRow" /> 
 			<Columns>
@@ -47,21 +47,21 @@
 
 				  <asp:TemplateField ShowHeader="True" HeaderText="Actions"  ItemStyle-Width="15%" >
 <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update"
+                        <asp:LinkButton ID="lnkUpdate" runat="server" CausesValidation="True" CommandName="Update"
                             Text="Update"  CSSClass="btn btn-default"></asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel"
+                        <asp:LinkButton ID="lnkCancel" runat="server" CausesValidation="False" CommandName="Cancel"
                             Text="Cancel"  CSSClass="btn btn-default"></asp:LinkButton>
                     </EditItemTemplate>
 
 					
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Edit"
+                        <asp:LinkButton ID="lnkEdit" runat="server" CausesValidation="False" CommandName="Edit"
                             Text='Edit'  CSSClass="btn btn-default"></asp:LinkButton>
-						 <asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete"
+						 <asp:LinkButton ID="lnkDelete" runat="server" CausesValidation="False" CommandName="Delete"
                             Text='Delete'  CSSClass="btn btn-default"></asp:LinkButton>
-							 <asp:LinkButton ID="LinkButton5" runat="server" CausesValidation="False"
+							 <asp:LinkButton ID="linkView" runat="server" CausesValidation="False"
                             Text='View Marks'  CSSClass="btn btn-default" href='<%# "MarksViewer.aspx?roll=" + Eval("RollNo") %>' Visible='<%# Convert.ToInt32(Eval("Marks.ID")) != 0 %>'></asp:LinkButton>
-                             <asp:LinkButton ID="LinkButton6" runat="server" CausesValidation="False"
+                             <asp:LinkButton ID="lnkInsert" runat="server" CausesValidation="False"
                             Text="Insert Marks" CSSClass="btn btn-default" OnClientClick='<%# "return showMarksDialog("+ Eval("ID") + "," + Eval("RollNo") + ");" %>' CommandName="AddMarks" Visible='<%# Convert.ToInt32(Eval("Marks.ID")) == 0 %>'></asp:LinkButton>
 
 					</ItemTemplate>
@@ -72,16 +72,19 @@
             </Columns>
 				
 			</asp:GridView>
-      <asp:ObjectDataSource ID="ObjectDataSource1" TypeName="naya.Models.StudentMarkRepository" SelectMethod="GetStudents" 
+      <asp:ObjectDataSource ID="ObjectDataSourceStudents" TypeName="naya.Models.StudentMarkRepository" SelectMethod="GetStudents" 
      DeleteMethod="DeleteStudent" UpdateMethod="EditStudent" runat="server"></asp:ObjectDataSource>
 
 	
 <div id="studentDialog" style="display: none">
 			 <h1>Add New</h1>
     <table>
+				<tr>
+				</tr>
 		<tr>
             <td>Roll No</td>
             <td><asp:TextBox ID="tbRollNo" runat="server" /></td>
+					 
         </tr>
         <tr>
             <td>First Name</td>
@@ -105,7 +108,7 @@
     <asp:Label ID="lblMessage" runat="server" />
     <br />
 
-  <asp:Button ID="btnAddStudent" runat="server" Text="Add" OnClick="btnAddStudent_Click" />
+  <asp:Button ID="btnAddStudent" runat="server" Text="Add" OnClientClick="return validate();" OnClick="btnAddStudent_Click" />
   </div>
   <div>
 		</div>
@@ -139,7 +142,7 @@
             <td><asp:TextBox ID="tbEnglish" runat="server" /></td>
         </tr>
     </table>
-    <asp:Button ID="btnAddMarks" runat="server" Text="Add" OnClick="btnAddMarks_Click"/>
+    <asp:Button ID="btnAddMarks" runat="server" Text="Add" OnClientClick="return validate_marks();" OnClick="btnAddMarks_Click"  />
 			</div>
 
 			</form>
@@ -154,9 +157,70 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
 
 	<script>
-		$(document).ready( function () {
+
+				function validate(){
+			var roll = document.getElementById("ctl00_ContentSection_tbRollNo").value;
+		    var firstName = document.getElementById("ctl00_ContentSection_tbFirstName").value;
+			var lastName = document.getElementById("ctl00_ContentSection_tbLastName").value;
+			var class_name = document.getElementById("ctl00_ContentSection_tbClass").value;
+			var section = document.getElementById("ctl00_ContentSection_tbSection").value;
+			if (roll.length!=3)  
+{  
+alert("Roll number should not be empty and the length should be of 3");  
+
+return false;  
+		
+}  
+		if (firstName.length == 0 || lastName.length == 0){
+		 
+			alert("Name cannot be empty.");
+		
+			return false;
+		}
+		if (class_name.length == 0){
+		 
+			alert("Class cannot be empty.");
+		
+			return false;
+		}
+		if (section.length == 0){
+		 
+			alert("Section cannot be empty.");
+		
+			return false;
+		}
+		return true;  
+	}
+
+		function validate_marks(){
+			var physics = document.getElementById("ctl00_ContentSection_tbPhysics").value;
+			var chemistry = document.getElementById("ctl00_ContentSection_tbChemistry").value;
+		    var maths  = document.getElementById("ctl00_ContentSection_tbMathematics").value;
+			var computing = document.getElementById("ctl00_ContentSection_tbComputing").value;
+			var english = document.getElementById("ctl00_ContentSection_tbEnglish").value;
+				if (physics.length == 0 || chemistry.length == 0 || maths.length == 0 || computing.length == 0 || english.length == 0)  
+{  
+alert("Marks should not be empty");  
+
+return false;  
+		
+}  
+	
+		
+		 if (isNaN(physics) || isNaN(chemistry) ||  isNaN(maths) || isNaN(computing) || isNaN(english)) {
+
+		alert("Please enter only numbers as input.");
+		return false;
+		} 
+		return true;  
+		
+		}
 
 		
+		$(document).ready( function () {
+
+	
+
     var dtable = $(".gvv").prepend( $("<thead></thead>").append( $(this).find("tr:first") ) ).dataTable({
 		"aaSorting": [],
 		fixedHeader: {
@@ -185,6 +249,7 @@
 		   open: function(type, data) { $(this).parent().appendTo("form");  },
                 close: function (type, data) { ($(this).parent().replaceWith("")); }
         });
+			
  			return false;
         }
 

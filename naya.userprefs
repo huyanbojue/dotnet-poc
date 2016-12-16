@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{A507CED4-B3CB-4EDF-AE97-77870AA5AF3E}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="naya/Web.config">
     <Files>
-      <File FileName="naya/StudentViewer.aspx" Line="171" Column="21" />
+      <File FileName="naya/StudentViewer.aspx" Line="83" Column="5" />
       <File FileName="naya/StudentViewer.aspx.cs" Line="48" Column="5" />
       <File FileName="naya/MarksViewer.aspx.cs" Line="8" Column="3" />
       <File FileName="naya/MarksViewer.aspx" Line="135" Column="4" />
@@ -13,7 +13,7 @@
       <File FileName="naya/StudentViewer.aspx.designer.cs" Line="1" Column="1" />
       <File FileName="naya/Models/nayaDbContext.cs" Line="1" Column="1" />
       <File FileName="naya/Global.asax" Line="1" Column="1" />
-      <File FileName="naya/Web.config" Line="16" Column="23" />
+      <File FileName="naya/Web.config" Line="9" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

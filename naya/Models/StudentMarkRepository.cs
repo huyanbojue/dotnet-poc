@@ -54,9 +54,11 @@ namespace naya.Models
 
 		public void DeleteStudent(int id)
 		{
+			Mark mark = _Context.Marks.SingleOrDefault(s => s.ID == id);
 			Student student = _Context.Students.SingleOrDefault(s => s.ID == id);
 			if (student != null)
 			{
+				student.Marks = mark;
 				_Context.Students.Remove(student);
 				_Context.SaveChanges();
 			}
@@ -75,6 +77,7 @@ namespace naya.Models
 				student.LastName = LastName;
 					student.Class = Class;
 				student.Section = Section;
+
 				_Context.SaveChanges();
 			}else
 			{

@@ -32,8 +32,8 @@
 <asp:Content id="body" ContentPlaceHolderID="ContentSection" runat="server">
 
 		<form runat="server">
-<asp:GridView ID="GridView3" runat="server" DataKeyNames="ID" AutoGenerateColumns="false"
-         AllowSorting="true"   DataSourceID="ObjectDataSource3" AllowPaging="true" CssClass="gvv" HeaderStyle-BackColor="CornflowerBlue" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="White" >
+<asp:GridView ID="MarksGridView" runat="server" DataKeyNames="ID" AutoGenerateColumns="false"
+         AllowSorting="true"   DataSourceID="ObjectDataSourceMarks" AllowPaging="true" CssClass="gvv" HeaderStyle-BackColor="CornflowerBlue" HeaderStyle-Font-Bold="true" HeaderStyle-ForeColor="White" >
               <EditRowStyle CssClass="GridViewEditRow" /> 
 			<Columns>
 
@@ -89,7 +89,7 @@
                
             </Columns>
 				</asp:GridView>
-			<asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="GetStudentsMarks" 
+			<asp:ObjectDataSource ID="ObjectDataSourceMarks" runat="server" SelectMethod="GetStudentsMarks" 
      DeleteMethod="DeleteMark" UpdateMethod="EditMark" TypeName="naya.Models.StudentMarkRepository">
 			</asp:ObjectDataSource>
 

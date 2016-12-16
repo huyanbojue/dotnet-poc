@@ -19,7 +19,7 @@ namespace naya {
 		
 		protected System.Web.UI.WebControls.Content body;
 		
-		protected System.Web.UI.WebControls.GridView GridView3;
+		protected System.Web.UI.WebControls.GridView MarksGridView;
 		
 		protected System.Web.UI.WebControls.Label RollNo;
 		
@@ -35,7 +35,7 @@ namespace naya {
 		
 		protected System.Web.UI.WebControls.LinkButton lnkDelete;
 		
-		protected System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
+		protected System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceMarks;
 		
 		protected System.Web.UI.WebControls.Content script;
 	}

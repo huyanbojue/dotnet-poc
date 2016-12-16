@@ -38,6 +38,7 @@
 		<%-- Script Section --%>
 		<script src="/Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 		<script src="/Scripts/bootstrap.min.js" type="text/javascript"></script>
+	
 		<asp:ContentPlaceHolder id="ScriptSection" runat="server" />
 	</body>
 </html>

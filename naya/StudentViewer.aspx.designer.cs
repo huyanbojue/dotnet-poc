@@ -19,21 +19,23 @@ namespace naya {
 		
 		protected System.Web.UI.WebControls.Content body;
 		
+		protected System.Web.UI.HtmlControls.HtmlForm pageForm;
+		
 		protected System.Web.UI.WebControls.GridView StudentsGridView;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton1;
+		protected System.Web.UI.WebControls.LinkButton lnkUpdate;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton2;
+		protected System.Web.UI.WebControls.LinkButton lnkCancel;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton3;
+		protected System.Web.UI.WebControls.LinkButton lnkEdit;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton4;
+		protected System.Web.UI.WebControls.LinkButton lnkDelete;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton5;
+		protected System.Web.UI.WebControls.LinkButton linkView;
 		
-		protected System.Web.UI.WebControls.LinkButton LinkButton6;
+		protected System.Web.UI.WebControls.LinkButton lnkInsert;
 		
-		protected System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+		protected System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceStudents;
 		
 		protected System.Web.UI.WebControls.TextBox tbRollNo;
 		
